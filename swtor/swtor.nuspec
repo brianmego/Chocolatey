@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+  <metadata>
+    <id>swtor</id>
+    <title>Star Wars: The Old Republic</title>
+    <version>1.0.0.2</version>
+    <authors>BioWare</authors>
+    <owners>Brian Mego</owners>
+    <summary>swtor</summary>
+    <description>Play Star Wars™: The Old Republic™ and be the hero of your own Star Wars™ saga in a story-driven massively-multiplayer online game from BioWare and LucasArts. Explore an age thousands of years before the rise of Darth Vader when war between the Galactic Republic and the Sith Empire divides the galaxy.</description>
+    <projectUrl>http://www.swtor.com</projectUrl>
+    <tags>Star Wars Old Republic Games Bioware</tags>
+    <copyright>2012</copyright>
+    <licenseUrl>http://www.swtor.com/legalnotices/euala</licenseUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <iconUrl>http://www.askajedi.com/wp-content/uploads/2011/12/TOR-Icon.png</iconUrl>
+    <releaseNotes></releaseNotes>
+  </metadata>
+</package>
