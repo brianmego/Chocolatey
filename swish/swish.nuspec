@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+  <metadata>
+    <id>swish</id>
+    <title>Swish</title>
+    <version>0.7.3</version>
+    <authors>Alexander Lamaison</authors>
+    <owners>Brian Mego</owners>
+    <summary>Easy SFTP for Windows</summary>
+    <description>Swish adds support for SFTP to Windows Explorer so you can access your files on another computer securely via SSH. Swish is easy to use because it integrates seamlessly with Windows Explorer so working with remote files feels just like working with the ones on your local computer.</description>
+    <projectUrl>http://www.swish-sftp.org/</projectUrl>
+    <tags>SFTP Explorer Extension</tags>
+    <copyright>2013</copyright>
+    <licenseUrl>http://sourceforge.net/directory/license:gpl/</licenseUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <iconUrl>http://www.swish-sftp.org/chrome/site/swishheader3.png</iconUrl>
+    <releaseNotes></releaseNotes>
+  </metadata>
+</package>
