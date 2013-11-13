@@ -2,8 +2,8 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
   <metadata>
     <id>sqlyog</id>
-    <title>SQLyog (32-Bit)</title>
-    <version>11.2.6.0</version>
+    <title>SQLyog</title>
+    <version>11.2.6.1</version>
     <authors>Webyog</authors>
     <owners>Brian Mego</owners>
     <summary>MySQL Manager and Admin Tool</summary>
