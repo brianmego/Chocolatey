@@ -1,9 +1,9 @@
-<?xml version="1.0"?>
+<?xml version="1.0" encoding="utf-8"?>
 <package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
   <metadata>
     <id>sqlyog</id>
     <title>SQLyog</title>
-    <version>11.3.3.0</version>
+    <version>11.4.0.0</version>
     <authors>Webyog</authors>
     <owners>Brian Mego</owners>
     <summary>MySQL Manager and Admin Tool</summary>
