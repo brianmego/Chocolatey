@@ -3,14 +3,14 @@
   <metadata>
     <id>dexpot</id>
     <title>Dexpot</title>
-    <version>1.6.5</version>
+    <version>1.6.12</version>
     <authors>Sebastian Brands and Patrick Dubbert</authors>
     <owners>Brian Mego</owners>
     <summary>dexpot</summary>
     <description>Virtual desktops for Windows</description>
     <projectUrl>http://www.dexpot.de/</projectUrl>
     <tags>dexpot virtual desktops</tags>
-    <copyright>2013</copyright>
+    <copyright>2014</copyright>
     <licenseUrl>http://www.dexpot.de/download/eula_en.pdf</licenseUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <iconUrl>http://www.dexpot.de/gfx/header_button_gbr.png</iconUrl>
