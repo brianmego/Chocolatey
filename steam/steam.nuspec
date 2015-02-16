@@ -3,18 +3,17 @@
   <metadata>
     <id>steam</id>
     <title>Steam</title>
-    <version>1.0.0.3</version>
+    <version>1.0.0.5</version>
     <authors>Valve Corporation</authors>
     <owners>Brian Mego</owners>
     <summary>steam</summary>
-    <description>The ultimate entertainment platform. Play, connect, create and more.
-Note: This package automatically detects the system language and downloads the localized installer.</description>
+    <description>The ultimate entertainment platform. Play, connect, create and more.</description>
     <projectUrl>http://store.steampowered.com</projectUrl>
     <tags>steam games gaming</tags>
     <copyright>2014</copyright>
     <licenseUrl>http://store.steampowered.com/subscriber_agreement/</licenseUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
-    <iconUrl>http://cdn.uproxx.com/wp-content/uploads/2012/07/steam-logo-great-prices.gif</iconUrl>
+    <iconUrl>https://cdn.rawgit.com/TomOne/various/bbbf3dab9d7ad6055e676cd043322e69ee7e2245/steam.png</iconUrl>
     <releaseNotes></releaseNotes>
   </metadata>
 </package>
