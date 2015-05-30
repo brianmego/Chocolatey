@@ -1,12 +1,24 @@
 $packageName = 'sqlyog'
 $installerType = 'EXE'
 $silentArgs = '/S'
-$validExitCodes = @(0)
 
-try {
-	$uninstaller = Get-ChildItem HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\ | %{Get-ItemProperty $_.pspath} | ?{$_.DisplayName -match 'SQLyog'} | select -first 1 -ExpandProperty UninstallString
-	Uninstall-ChocolateyPackage $packageName $installerType $silentArgs $uninstaller -validExitCodes $validExitCodes
-	Write-ChocolateySuccess $packageName
-} catch {
-	Write-ChocolateyFailure $packageName $($_.Exception.Message)
+function Get-Uninstaller {
+  [CmdletBinding()]
+  param(
+    [Parameter(Mandatory = $true)]
+    [ValidateNotNullOrEmpty()]
+    [string] $Name
+  )
+
+  $local_key     = 'HKCU:\Software\Microsoft\Windows\CurrentVersion\Uninstall\*'
+  $machine_key32 = 'HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\*'
+  $machine_key64 = 'HKLM:\SOFTWARE\Wow6432Node\Microsoft\Windows\CurrentVersion\Uninstall\*'
+
+  @($local_key, $machine_key32, $machine_key64) `
+    | ?{ Test-Path $_ } `
+    | Get-ItemProperty `
+    | ?{ $_.DisplayName -match $Name } `
+    | Select-Object -ExpandProperty UninstallString
 }
+
+Uninstall-ChocolateyPackage $packageName $installerType $silentArgs (Get-Uninstaller -Name $packageName) 
