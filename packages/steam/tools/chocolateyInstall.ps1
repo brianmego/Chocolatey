@@ -1,13 +1,14 @@
-﻿$packageName = 'steam'
-$installerType = 'EXE'
-$url = 'http://media.steampowered.com/client/installer/SteamSetup.exe'
-$silentArgs = '/S'
-$validExitCodes = @(0)
+﻿$unzipLocation = "$(Split-Path -parent $MyInvocation.MyCommand.Definition)"
+$setupFile = "SteamSetup.exe"
 
-try {
-	Install-ChocolateyPackage $packageName $installerType $silentArgs $url -validExitCodes $validExitCodes
-	Write-ChocolateySuccess $packageName
-} catch {
-	Write-ChocolateyFailure $packageName $($_.Exception.Message)
-	throw	
+$packageArgs = @{
+  packageName   = 'steam'
+  unzipLocation = "$unzipLocation"
+  fileType      = 'exe'
+  url           = "$(Join-Path $unzipLocation $setupFile)"
+  silentArgs    = '/S'
+  validExitCodes= @(0)
+  softwareName  = 'steam*'
 }
+
+Install-ChocolateyPackage @packageArgs
