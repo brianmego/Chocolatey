@@ -1,4 +1,18 @@
-﻿#try { #error handling is only necessary if you need to do anything in addition to/instead of the main helpers
-  # main helpers - these have error handling tucked into them so they become the only line of your script if that is all you need.
-  # installer, will assert administrative rights
-  Install-ChocolateyPackage 'flux' 'exe' '/S' 'http://stereopsis.com/flux/flux-setup.exe'
+$ErrorActionPreference = 'Stop'
+ 
+$packageName = 'f.lux'
+$url32       = 'http://stereopsis.com/flux/flux-setup.exe'
+$checksum32  = '99F6A5FCF8C6789FF4D69A98B6CB1AF9296A76F210C01A6C8A0716EF79134F2F'
+ 
+$packageArgs = @{
+  packageName            = $packageName
+  fileType               = 'exe'
+  url                    = $url32
+  silentArgs             = '/S'
+  checksum               = $checksum32
+  checksumType           = 'sha256'
+  validExitCodes         = @(0)
+  registryUninstallerKey = $packageName
+}
+ 
+Install-ChocolateyPackage @packageArgs
