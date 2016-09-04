@@ -10,11 +10,11 @@
     <description>The ultimate entertainment platform. Play, connect, create and more.</description>
     <projectUrl>http://store.steampowered.com</projectUrl>
     <tags>steam games gaming</tags>
-    <copyright>2014</copyright>
+    <copyright>2016 Valve Corporation</copyright>
     <licenseUrl>http://store.steampowered.com/subscriber_agreement/</licenseUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <iconUrl>https://cdn.rawgit.com/TomOne/various/bbbf3dab9d7ad6055e676cd043322e69ee7e2245/steam.png</iconUrl>
     <releaseNotes></releaseNotes>
-	<packageSourceUrl>https://github.com/brianmego/Chocolatey</packageSourceUrl>
+    <packageSourceUrl>https://github.com/brianmego/Chocolatey</packageSourceUrl>
   </metadata>
 </package>
