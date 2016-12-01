@@ -7,3 +7,6 @@ $packageArgs = @{
 }
  
 Install-ChocolateyZipPackage @packageArgs
+
+Install-ChocolateyShortcut -ShortcutFilePath "$ENV:ProgramData\Microsoft\Windows\Start Menu\Programs\Flux.lnk" -TargetPath "$ENV:ChocolateyInstall\lib\$packageName\tools\flux.exe"
+Install-ChocolateyShortcut -ShortcutFilePath "$ENV:ProgramData\Microsoft\Windows\Start Menu\Programs\StartUp\f.lux.lnk" -TargetPath "$ENV:ChocolateyInstall\lib\$packageName\tools\flux.exe"
