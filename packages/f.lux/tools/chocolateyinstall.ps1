@@ -12,8 +12,8 @@ Install-ChocolateyZipPackage @packageArgs
 if ( ([Security.Principal.WindowsPrincipal] [Security.Principal.WindowsIdentity]::GetCurrent()).IsInRole(`
 	[Security.Principal.WindowsBuiltInRole] "Administrator") ) {
 	Install-ChocolateyShortcut -ShortcutFilePath "$ENV:ProgramData\Microsoft\Windows\Start Menu\Programs\Flux.lnk" -TargetPath "$ENV:ChocolateyInstall\lib\$packageName\tools\flux.exe"
-  Install-ChocolateyShortcut -ShortcutFilePath "$ENV:ProgramData\Microsoft\Windows\Start Menu\Programs\StartUp\f.lux.lnk" -TargetPath "$ENV:ChocolateyInstall\lib\$packageName\tools\flux.exe"
+	Install-ChocolateyShortcut -ShortcutFilePath "$ENV:ProgramData\Microsoft\Windows\Start Menu\Programs\StartUp\f.lux.lnk" -TargetPath "$ENV:ChocolateyInstall\lib\$packageName\tools\flux.exe"
 } else {
-  Install-ChocolateyShortcut -ShortcutFilePath "$ENV:APPDATA\Microsoft\Windows\Start Menu\Programs\Flux.lnk" -TargetPath "$ENV:ChocolateyInstall\lib\$packageName\tools\flux.exe"
-  Install-ChocolateyShortcut -ShortcutFilePath "$ENV:APPDATA\Microsoft\Windows\Start Menu\Programs\StartUp\f.lux.lnk" -TargetPath "$ENV:ChocolateyInstall\lib\$packageName\tools\flux.exe"
+	Install-ChocolateyShortcut -ShortcutFilePath "$ENV:APPDATA\Microsoft\Windows\Start Menu\Programs\Flux.lnk" -TargetPath "$ENV:ChocolateyInstall\lib\$packageName\tools\flux.exe"
+	Install-ChocolateyShortcut -ShortcutFilePath "$ENV:APPDATA\Microsoft\Windows\Start Menu\Programs\StartUp\f.lux.lnk" -TargetPath "$ENV:ChocolateyInstall\lib\$packageName\tools\flux.exe"
 }
