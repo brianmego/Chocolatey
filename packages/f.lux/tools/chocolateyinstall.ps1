@@ -1,19 +1,28 @@
+$ErrorActionPreference = 'Stop'
+ 
+$packageName = 'f.lux'
+$url32       = 'http://stereopsis.com/flux/flux-setup.exe'
+$checksum32  = '2696C35394CA9125098458FC080461B6C841D6D8FD263B40270D21A8823C65B0'
+ 
 $packageArgs = @{
-  packageName            = 'f.lux'
-  url                    = 'http://stereopsis.com/flux/flux-setup.exe'
-  checksum               = '99F6A5FCF8C6789FF4D69A98B6CB1AF9296A76F210C01A6C8A0716EF79134F2F'
+  packageName            = $packageName
+  url                    = $url32
+  checksum               = $checksum32
   checksumType           = 'sha256'
   UnzipLocation 	 = "$(Split-Path -parent $MyInvocation.MyCommand.Definition)"
 }
  
 Install-ChocolateyZipPackage @packageArgs
 
-# Considerations for non-admin installs
-if ( ([Security.Principal.WindowsPrincipal] [Security.Principal.WindowsIdentity]::GetCurrent()).IsInRole(`
-	[Security.Principal.WindowsBuiltInRole] "Administrator") ) {
-	Install-ChocolateyShortcut -ShortcutFilePath "$ENV:ProgramData\Microsoft\Windows\Start Menu\Programs\Flux.lnk" -TargetPath "$ENV:ChocolateyInstall\lib\$packageName\tools\flux.exe"
-	Install-ChocolateyShortcut -ShortcutFilePath "$ENV:ProgramData\Microsoft\Windows\Start Menu\Programs\StartUp\f.lux.lnk" -TargetPath "$ENV:ChocolateyInstall\lib\$packageName\tools\flux.exe"
-} else {
-	Install-ChocolateyShortcut -ShortcutFilePath "$ENV:APPDATA\Microsoft\Windows\Start Menu\Programs\Flux.lnk" -TargetPath "$ENV:ChocolateyInstall\lib\$packageName\tools\flux.exe"
-	Install-ChocolateyShortcut -ShortcutFilePath "$ENV:APPDATA\Microsoft\Windows\Start Menu\Programs\StartUp\f.lux.lnk" -TargetPath "$ENV:ChocolateyInstall\lib\$packageName\tools\flux.exe"
-}
+# Start menu shortcuts
+$ProgsFolder = [environment]::getfolderpath('Programs')
+If ( Test-ProcessAdminRights ) { $ProgsFolder = [environment]::getfolderpath('CommonPrograms') }
+
+Install-ChocolateyShortcut -shortcutFilePath "$ProgsFolder\f.lux.lnk" `
+	-targetPath "$ENV:ChocolateyInstall\lib\$packageName\tools\flux.exe" `
+	-WorkingDirectory "$ENV:ChocolateyInstall\lib\$packageName\tools\runtime"
+
+Install-ChocolateyShortcut -shortcutFilePath "$ProgsFolder\Startup\f.lux.lnk" `
+	-targetPath "$ENV:ChocolateyInstall\lib\$packageName\tools\flux.exe" `
+	-WorkingDirectory "$ENV:ChocolateyInstall\lib\$packageName\tools\runtime" `
+	-Arguments "/noshow"
