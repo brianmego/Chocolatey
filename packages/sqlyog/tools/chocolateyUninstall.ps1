@@ -15,9 +15,9 @@ function Get-Uninstaller {
   $machine_key64 = 'HKLM:\SOFTWARE\Wow6432Node\Microsoft\Windows\CurrentVersion\Uninstall\*'
 
   @($local_key, $machine_key32, $machine_key64) `
-    | ?{ Test-Path $_ } `
+    | Where-Object { Test-Path $_ } `
     | Get-ItemProperty `
-    | ?{ $_.DisplayName -match $Name } `
+    | Where-Object { $_.DisplayName -match $Name } `
     | Select-Object -ExpandProperty UninstallString
 }
 
